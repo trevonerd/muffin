@@ -6,7 +6,8 @@
     "scripts": {
         "build": "rollup --config rollup.config.js",
         "clean": "rm -rf node_modules && rm -rf dist",
-        "watch": "nodemon --exec yarn run build"
+        "watch": "nodemon --exec yarn run local:update",
+        "local:update": "yarn run build && yalc push"
     },
     "author": "Marco Trevisani <marco.trevisani81@gmail.com>",
     "license": "ISC",
