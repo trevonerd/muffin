@@ -14,7 +14,14 @@ const yooxTheme = createMuiTheme({
       main: red.A400
     },
     background: {
-      default: "#fff"
+      default: "white"
+    }
+  },
+  overrides: {
+    MuiBackdrop: {
+      root: {
+        backgroundColor: "rgba(255,255,255,0.75)"
+      }
     }
   }
 });

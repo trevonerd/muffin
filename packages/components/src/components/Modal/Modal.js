@@ -2,24 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Dialog, DialogTitle, DialogContent, Toolbar, IconButton } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
-import { makeStyles } from "@material-ui/core/styles";
 import ModalTrigger from "./ModalTrigger";
-
-const dialogStyle = makeStyles({
-  paperWidthSm: {
-    maxWidth: "450px",
-    margin: "0 auto",
-    boxShadow: "3px 3px #ccc",
-    border: "1px solid #ccc"
-  }
-});
-
-const dialogToolbarStyle = makeStyles({
-  root: {
-    display: "flex",
-    justifyContent: "space-between"
-  }
-});
 
 function SimpleDialog(props) {
   const { onClose, open, title, icon, children } = props;
@@ -35,9 +18,8 @@ function SimpleDialog(props) {
       open={open}
       fullWidth={true}
       maxWidth="sm"
-      classes={dialogStyle()}
     >
-      <Toolbar disableGutters={true} classes={dialogToolbarStyle()} variant="dense">
+      <Toolbar disableGutters={true} variant="dense">
         <DialogTitle id="simple-dialog-title">{title}</DialogTitle>
         {icon ? (
           <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
